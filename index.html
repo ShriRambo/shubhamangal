@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Invitation</title>
+    <link rel="stylesheet" href=" ./static/simple.css" />
+    <link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="content">
+      <br>
+
+      <p>
+      <img src="./static/h1.png" alt="h1.png">
+      <p>
+      <h1 align='center' style='margin:10px'>
+	<table align='center'>
+	  <tr>
+	    <td>
+	      <span id="nd"></span> 
+	    </td>
+	    
+	    <td>
+	      <span id="nh"></span>
+	    </td>
+	    <td>
+	      <span id="nm"></span>
+	    </td>
+	    <td>
+	      <span id="ns"></span>
+	    </td>
+	  </tr>
+	  <tr>
+	    <tr>
+	    <td>
+	     Days
+	    </td>
+	    
+	    <td>
+	    Hours
+	    </td>
+	    <td>
+	     Minutes
+	    </td>
+	    <td>
+	     Seconds
+	    </td>
+	  </tr>
+	</table>
+      </h1>
+
+      <h3> to the wedding </h3>
+
+      <p>
+	<img src="./static/h2.png" alt="h2.png">
+      </p>
+      
+      <p >
+	We cordially invite you to the wedding of
+      </P>
+      <br>
+      <p>
+	the son of Jaishri and Ravindra Ashirgade
+      </p>
+
+      <h3> Shriram Ashirgade </h3>
+      <h5> and </h5>
+      <h3>Dhanashree Ganeshpure </h3>
+
+      <p>
+	the daughter of Rekha and Ashok Ganeshpure
+      </p>
+
+      <p>
+	<img src="./static/h3.jpg"  style='transform: scale(0.5)'>
+      </p>
+      
+      <p>
+	The wedding ceremony will take place on
+      </p>
+      
+      <h4>31st of January, 2023 at 10:00am</h4>
+      
+      <h5>at</h5>
+      
+      <h4>Shri Radhe Mangalam Banquet Hall, <br> Pratap Nagar, Nagpur, Maharashtra</h4>
+
+	  
+      <p>
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d935.6527998040542!2d79.05084703900869!3d21.11253735896734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4bf8f27d7466f%3A0x799429455bec2e47!2sShree%20Radhe%20Mangalam!5e0!3m2!1sen!2snl!4v1670413353028!5m2!1sen!2snl" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </p>
+
+      <!--
+      <p>
+	<img src="./static/h4.jpg"  style='transform: scale(0.5)'>
+      </p>
+
+      <!--
+      <h3>Kindly Reply</h3>
+      
+      <p>
+	<iframe  src="https://docs.google.com/forms/d/e/1FAIpQLSclU4U2RUZO5MRoL4PmykzHnGjcHhkUPCPlOVh2P8gOLPfRCw/viewform?embedded=true" width="740" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </p>
+
+      <!--
+
+      <p>
+	<img src="./static/h5.jpg"  style='transform: scale(0.5)'>
+      </p>
+      
+      <p>
+	<img src="./static/h6.jpg"  style='transform: scale(0.5)'>
+      </p>
+      ---> 
+      <p>
+	<img src="./static/h7.jpg" style='transform: scale(0.5)' >
+      </p>
+     
+      
+    </div>
+  </body>
+  <script>
+    function changeTime(){
+	let ata = new Date()
+	let tevha = new Date('2023-01-31T10:10:00.00+05:30')
+
+	// get total seconds between the times
+	var delta = Math.abs(tevha - ata) / 1000;
+	
+	
+	// calculate (and subtract) whole days
+	var days = Math.floor(delta / 86400);
+	delta -= days * 86400;
+	document.getElementById('nd').innerText = days
+
+	
+	// calculate (and subtract) whole hours
+	var hours = Math.floor(delta / 3600) % 24;
+	delta -= hours * 3600;
+	document.getElementById('nh').innerText = ('0' + hours).slice(-2)
+
+	
+	// calculate (and subtract) whole minutes
+	var minutes = Math.floor(delta / 60) % 60;
+	delta -= minutes * 60;
+	document.getElementById('nm').innerText = ('0' + minutes).slice(-2)
+
+	// what's left is seconds
+	var seconds = delta % 60;  // in theory the modulus is not required
+	document.getElementById('ns').innerText = ('0' + (seconds | 0)).slice(-2)
+
+    };
+
+    setInterval(changeTime, 1000);
+  </script>
+</html>
